@@ -21,7 +21,7 @@ const system: AppRouteModule = {
         title: t('routes.demo.system.role'),
         ignoreKeepAlive: true,
       },
-      component: () => import('/@/views/demo/system/role/index.vue'),
+      component: () => import('/@/views/demo/role/index.vue'),
     },
   ],
 };

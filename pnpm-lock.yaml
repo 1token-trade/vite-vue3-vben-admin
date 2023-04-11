@@ -116,8 +116,6 @@ specifiers:
   vue-tsc: ^1.0.9
   vue-types: ^4.1.1
   vuedraggable: ^4.1.0
-  vxe-table: ^4.3.9
-  vxe-table-plugin-export-xlsx: ^3.0.4
   xe-utils: ^3.5.7
   xlsx: ^0.18.5
 
@@ -160,8 +158,6 @@ dependencies:
   vue-router: 4.1.6_vue@3.2.47
   vue-types: 4.2.1_vue@3.2.47
   vuedraggable: 4.1.0_vue@3.2.47
-  vxe-table: 4.3.9_vue@3.2.47+xe-utils@3.5.7
-  vxe-table-plugin-export-xlsx: 3.0.4_vxe-table@4.3.9
   xe-utils: 3.5.7
   xlsx: 0.18.5
 
@@ -10357,24 +10353,6 @@ packages:
     dependencies:
       sortablejs: 1.14.0
       vue: 3.2.47
-    dev: false
-
-  /vxe-table-plugin-export-xlsx/3.0.4_vxe-table@4.3.9:
-    resolution: {integrity: sha512-Og/NbXRIb+BS6sJ48oDNVrZnlkcpaCd/zS8JBAZjHLgioWr1Xoob6FEpaeXBebGPPgTumZNUrrBO57JhhYAerA==}
-    peerDependencies:
-      vxe-table: ^4.0.27
-    dependencies:
-      vxe-table: 4.3.9_vue@3.2.47+xe-utils@3.5.7
-    dev: false
-
-  /vxe-table/4.3.9_vue@3.2.47+xe-utils@3.5.7:
-    resolution: {integrity: sha512-Ns7Ooa7lOHBpks90i0k0BMNyxfMpUo39ryxTgKE41X3xVnI9tGQs2U6+klfDlsuqYfmG3ibyzHN3OCrWbbKo4Q==}
-    peerDependencies:
-      vue: ^3.2.28
-      xe-utils: ^3.5.0
-    dependencies:
-      vue: 3.2.47
-      xe-utils: 3.5.7
     dev: false
 
   /warning/4.0.3:

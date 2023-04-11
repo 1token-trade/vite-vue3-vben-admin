@@ -69,8 +69,6 @@
     "vue-json-pretty": "^2.0.6",
     "vue-router": "^4.0.14",
     "vue-types": "^4.1.1",
-    "vxe-table": "^4.3.9",
-    "vxe-table-plugin-export-xlsx": "^3.0.4",
     "xe-utils": "^3.5.7",
     "xlsx": "^0.18.5",
     "vuedraggable": "^4.1.0"
