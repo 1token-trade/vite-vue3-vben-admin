@@ -1,4 +1,8 @@
-import { UploadApiResult } from '/@/api/sys/model/uploadModel';
+interface UploadApiResult {
+  message: string;
+  code: number;
+  url: string;
+}
 
 export enum UploadResultStatus {
   SUCCESS = 'success',

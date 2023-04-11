@@ -6,8 +6,6 @@ import { RoleEnum } from '/@/enums/roleEnum';
 import { PageEnum } from '/@/enums/pageEnum';
 import { ROLES_KEY, TOKEN_KEY, USER_INFO_KEY } from '/@/enums/cacheEnum';
 import { getAuthCache, setAuthCache } from '/@/utils/auth';
-import { GetUserInfoModel, LoginParams } from '/@/api/sys/model/userModel';
-import { doLogout, loginApi } from '/@/api/sys/user';
 import { useI18n } from '/@/hooks/web/useI18n';
 import { useMessage } from '/@/hooks/web/useMessage';
 import { router } from '/@/router';
@@ -16,6 +14,24 @@ import { RouteRecordRaw } from 'vue-router';
 import { PAGE_NOT_FOUND_ROUTE } from '/@/router/routes/basic';
 import { isArray } from '/@/utils/is';
 import { h } from 'vue';
+
+export interface RoleInfo {
+  roleName: string;
+  value: string;
+}
+interface GetUserInfoModel {
+  roles: RoleInfo[];
+  // 用户id
+  userId: string | number;
+  // 用户名
+  username: string;
+  // 真实名字
+  realName: string;
+  // 头像
+  avatar: string;
+  // 介绍
+  desc?: string;
+}
 
 interface UserState {
   userInfo: Nullable<UserInfo>;
@@ -82,15 +98,24 @@ export const useUserStore = defineStore({
     /**
      * @description: login
      */
-    async login(
-      params: LoginParams & {
-        goHome?: boolean;
-        mode?: ErrorMessageMode;
-      },
-    ): Promise<GetUserInfoModel | null> {
+    async login(params: {
+      goHome?: boolean;
+      mode?: ErrorMessageMode;
+    }): Promise<GetUserInfoModel | null> {
       try {
-        const { goHome = true, mode, ...loginParams } = params;
-        const data = await loginApi(loginParams, mode);
+        // const { goHome = true, mode, ...loginParams } = params;
+        // call Login api here
+        // const data = await loginApi(loginParams, mode);
+        const { goHome = true } = params;
+        const data = {
+          roles: [{ roleName: 'Super Admin', value: 'super' }],
+          userId: '1',
+          username: 'vben',
+          token: 'fakeToken1',
+          realName: 'Vben Admin',
+          desc: 'manager',
+        };
+
         const { token } = data;
 
         // save token
@@ -152,7 +177,8 @@ export const useUserStore = defineStore({
     async logout(goLogin = false) {
       if (this.getToken) {
         try {
-          await doLogout();
+          // call background Logout api here
+          // await logout()
         } catch {
           console.log('注销Token失败');
         }
